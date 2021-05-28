@@ -24,8 +24,36 @@ header > h1 {
 
 .score-board {
     margin: 2em auto;
-    border: .3em solid white;
-    width: 25em;
-    height: 10em;
+    border: .33em solid white;
+    border-radius: .5em;
+    text-align: center;
+    width: 11em;
+    color: #fff;
+    font-size: 2em;
+    padding: 1em 1.2em;
+    font-family: Asap, sans-serif;
+    position: relative;
+    
+}
+
+.badge {
+    background: red;
+   color: white;
+   font-size: 1em;
+   padding: .2em .1em;
+   font-family: Asap, sans-serif;
+
+}
+
+#user-label {
+    position: absolute;
+    top: .8em;
+    left: -1.1em;
+}
+
+#computer-label {
+    position: absolute;
+    top:.8em;
+    right: -1.7em;
 }
 
