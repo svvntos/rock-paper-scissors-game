@@ -1,10 +1,10 @@
-const userScore = 0;
-const computerScore = 0;
+let userScore = 0;
+let computerScore = 0;
 const userScoreEL = document.getElementById('user-score');
 const computerScoreEL = document.getElementById('computer-score');
 
 const scoreboardEL = document.querySelector('.score-board');
-const resultEL = document.querySelector('.results');
+const resultEL = document.querySelector('.results > p');
 
 const rockEL = document.getElementById('rock');
 const paperEL = document.getElementById('paper');
@@ -15,33 +15,61 @@ const scissorsEL = document.getElementById('scissors')
 
 
 
-function getComputerChoice(){
+function getComputerChoice() {
     const choices = ['r', 'p', 's'];
-    const getRandomNumber = Math.floor(Math.random()*3);
+    const getRandomNumber = Math.floor(Math.random() * 3);
 
     return choices[getRandomNumber];
 }
 
 
+function convertLetter(letter) {
+    if (letter === 'r') return 'Rock';
+    if (letter === 'p') return 'Paper';
+    return "Scissors"
+}
 
 
-function game(userChoice){
+function win(userChoice, computerChoice) {
+    userScore++;
+    userScoreEL.innerHTML = userScore;
+    computerScoreEL.innerHTML = computerScore;
+    resultEL.innerHTML = `${convertLetter(userChoice)} beats ${convertLetter(computerChoice)}! You WIN!`
+}
+
+function lose(userChoice, computerChoice) {
+    computerScore++;
+    userScoreEL.innerHTML = userScore;
+    computerScoreEL.innerHTML = computerScore;
+    resultEL.innerHTML = `${convertLetter(userChoice)} loses to ${convertLetter(computerChoice)}! You LOSE!`
+
+}
+
+function draw(userChoice, computerChoice) {
+    
+    resultEL.innerHTML = `${convertLetter(userChoice)} and ${convertLetter(computerChoice)} are the same! DRAW!`
+    console.log('DRAW')
+}
+
+
+
+function game(userChoice) {
     const computerChoice = getComputerChoice();
     switch (userChoice + computerChoice) {
         case 'rs':
         case 'pr':
         case 'sp':
-            console.log('user wins');
+            win(userChoice, computerChoice);
             break;
         case 'rp':
         case 'ps':
         case 'sr':
-            console.log('user losses');
+            lose(userChoice, computerChoice);
             break;
         case 'rr':
         case 'pp':
         case 'ss':
-            console.log('DRAW')
+            draw(userChoice, computerChoice);
             break;
     }
 
@@ -53,33 +81,33 @@ function game(userChoice){
 
 
 function main() {
-rockEL.addEventListener('click', function () {
+    rockEL.addEventListener('click', function () {
 
 
 
 
-    game('r')
-})
+        game('r')
+    })
 
-paperEL.addEventListener('click', function () {
-   
-    
-    
-    
-    
-    game('p')
-})
+    paperEL.addEventListener('click', function () {
 
-scissorsEL.addEventListener('click', function () {
-    
-    
-    
-    
-    
-    
-    
-    game('s')
-})
+
+
+
+
+        game('p')
+    })
+
+    scissorsEL.addEventListener('click', function () {
+
+
+
+
+
+
+
+        game('s')
+    })
 }
 
 
