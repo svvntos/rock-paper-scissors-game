@@ -34,7 +34,10 @@ function win(userChoice, computerChoice) {
     userScore++;
     userScoreEL.innerHTML = userScore;
     computerScoreEL.innerHTML = computerScore;
-    resultEL.innerHTML = `${convertLetter(userChoice)} beats ${convertLetter(computerChoice)}! You WIN!`
+    resultEL.innerHTML = `${convertLetter(userChoice)} beats ${convertLetter(computerChoice)}! You WIN!`;
+    
+    document.getElementById(userChoice).classList.add('green-glow')
+ 
 }
 
 function lose(userChoice, computerChoice) {
@@ -42,6 +45,8 @@ function lose(userChoice, computerChoice) {
     userScoreEL.innerHTML = userScore;
     computerScoreEL.innerHTML = computerScore;
     resultEL.innerHTML = `${convertLetter(userChoice)} loses to ${convertLetter(computerChoice)}! You LOSE!`
+  
+    
 
 }
 

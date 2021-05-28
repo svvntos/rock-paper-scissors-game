@@ -89,3 +89,8 @@ header > h1 {
     font-family: Asap, sans-serif;
     margin-top: 2em;
 }
+
+.green-glow {
+    border: .2em solid green;
+    box-shadow: 0 0 .3em lightgreen;
+}
