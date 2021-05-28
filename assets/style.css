@@ -1,59 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #25272E;
+body {
+  background-color: #25272e;
 }
 
 header {
-    background: whitesmoke;
-    padding: 2em;
+  background: whitesmoke;
+  padding: 2em;
 }
 
 header > h1 {
-    color: #25272E;
-    text-align: center;
-    font-family: Asap, sans-serif;
+  color: #25272e;
+  text-align: center;
+  font-family: Asap, sans-serif;
 }
 
 .score-board {
-    margin: 2em auto;
-    border: .33em solid white;
-    border-radius: .5em;
-    text-align: center;
-    width: 11em;
-    color: #fff;
-    font-size: 2em;
-    padding: 1em 1.2em;
-    font-family: Asap, sans-serif;
-    position: relative;
-    
+  margin: 2em auto;
+  border: 0.33em solid white;
+  border-radius: 0.5em;
+  text-align: center;
+  width: 11em;
+  color: #fff;
+  font-size: 2em;
+  padding: 1em 1.2em;
+  font-family: Asap, sans-serif;
+  position: relative;
 }
 
 .badge {
-    background: red;
-   color: white;
-   font-size: 1em;
-   padding: .2em .1em;
-   font-family: Asap, sans-serif;
-
+  background: red;
+  color: white;
+  font-size: 1em;
+  padding: 0.2em 0.1em;
+  font-family: Asap, sans-serif;
 }
 
 #user-label {
-    position: absolute;
-    top: .8em;
-    left: -1.1em;
+  position: absolute;
+  top: 0.8em;
+  left: -1.1em;
 }
 
 #computer-label {
-    position: absolute;
-    top:.8em;
-    right: -1.7em;
+  position: absolute;
+  top: 0.8em;
+  right: -1.7em;
 }
 
+.results {
+   font-size: 2em;
+   color: white;
+}
+
+.results > p {
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+.choices {
+    margin-top: 2em ;
+    text-align: center;
+}
+
+.choice {
+    display: inline-block;
+    border: .2em solid white;
+    margin: 0 1em;
+    border-radius: 50%;
+    padding: 1em;
+    transition: all .3s ease;
+}
+.choice:hover {
+    cursor: pointer;
+    background: whitesmoke;
+}
+
+#action-message {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-family: Asap, sans-serif;
+    margin-top: 2em;
+}
